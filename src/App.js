@@ -16,7 +16,7 @@ function App() {
   }, [])
 
   function getWeather(search){
-    if(search == '')
+    if(search === '')
       search = 'Januária'
     fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
     .then(res => res.json())
@@ -76,7 +76,7 @@ function App() {
             </div>
           </>
           :(  //PADRÃO
-            ''
+            <p className='error'>Nada para mostrar...</p>
           )
         )}
       </main>
