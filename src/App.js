@@ -16,6 +16,8 @@ function App() {
   }, [])
 
   function getWeather(search){
+    if(search == '')
+      search = 'Januária'
     fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
     .then(res => res.json())
     .then(result =>{
